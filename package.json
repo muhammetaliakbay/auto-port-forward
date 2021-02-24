@@ -1,0 +1,23 @@
+{
+  "name": "auto-port-forward",
+  "version": "0.0.1",
+  "description": "Simple CLI to make kubernetes development easy with port-forwarding",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammetaliakbay/auto-port-forward.git"
+  },
+  "author": "Muhammet Ali AKBAY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammetaliakbay/auto-port-forward/issues"
+  },
+  "homepage": "https://github.com/muhammetaliakbay/auto-port-forward#readme",
+  "dependencies": {
+    "validatorjs": "3.22.1",
+    "yaml": "1.10.0"
+  }
+}
