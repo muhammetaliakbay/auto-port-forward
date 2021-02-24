@@ -1,6 +1,9 @@
 {
   "name": "auto-port-forward",
-  "version": "0.0.1",
+  "bin": {
+    "apf": "./main.js"
+  },
+  "version": "0.0.2",
   "description": "Simple CLI to make kubernetes development easy with port-forwarding",
   "main": "main.js",
   "scripts": {
