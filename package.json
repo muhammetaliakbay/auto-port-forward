@@ -3,7 +3,7 @@
   "bin": {
     "apf": "./main.js"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple CLI to make kubernetes development easy with port-forwarding",
   "main": "main.js",
   "scripts": {
