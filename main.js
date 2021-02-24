@@ -59,9 +59,15 @@ function interp(template, vars) {
         }
     }
 
-
-    const dashIndex = process.argv.indexOf('--');
-    if (dashIndex == -1) {
+    const dashIndex = Math.min(
+        ...[
+            process.argv.indexOf('---'),
+            process.argv.indexOf('--'),
+            process.argv.indexOf('-'),
+            Infinity
+        ].filter(i => i > -1)
+    );
+    if (dashIndex == Infinity) {
         throw new Error("No command specified");
     }
 
