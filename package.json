@@ -1,11 +1,11 @@
 {
   "name": "auto-port-forward",
   "bin": {
-    "apf": "./main.js"
+    "apf": "./main.ts"
   },
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Simple CLI to make kubernetes development easy with port-forwarding",
-  "main": "main.js",
+  "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/muhammetaliakbay/auto-port-forward#readme",
   "dependencies": {
+    "@types/node": "14.14.31",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.2",
     "validatorjs": "3.22.1",
     "yaml": "1.10.0"
   }

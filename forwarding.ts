@@ -1,18 +1,12 @@
-const {
-    spawn
-} = require("child_process");
+import { spawn } from "child_process";
 
-const {
-    promisify
-} = require("util");
+import { promisify } from "util";
 
-const {
-    createServer
-} = require("net");
+import { createServer } from "net";
 
 
-exports.forward = function(
-    selector, port, localPort
+export function forward(
+    selector: string, port: number, localPort: number
 ) {
     const create = () => {
         const child = spawn(
@@ -37,8 +31,8 @@ exports.forward = function(
     create();
 }
 
-exports.randomPort = function() {
-    return new Promise(
+export function randomPort() {
+    return new Promise<number>(
         (resolve, reject) => {
             var srv = createServer(function(sock) {
                 sock.end();
@@ -47,9 +41,15 @@ exports.randomPort = function() {
                 reject(err);
             })
             srv.listen(0, function() {
-                const port = srv.address().port;
-                srv.close();
-                resolve(port);
+                const addr = srv.address();
+                if (addr instanceof Object && 'port' in addr) {
+                    const port = addr.port;
+                    srv.close();
+                    resolve(port);
+                } else {
+                    srv.close();
+                    reject(new Error('Invalid address object'));
+                }
             });
         }
     );
